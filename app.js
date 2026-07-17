@@ -1,5 +1,5 @@
 /* ================================================================== *
- *  bartlopen Run Coach — TEMPLATE
+ *  bartlopen Run Coach, TEMPLATE
  *  Herbruikbare basis voor een persoonlijke hardloop-app.
  *  Vast schema + invullen/afvinken, Strava-achtige stats, badges.
  *  Alles lokaal in de browser. Geen server nodig (werkt ook via file://).
@@ -11,24 +11,24 @@
  *   4) Stem COACH / WHY / INFO / BADGES af.
  *   Voor een TIJD-gebaseerde app (op minuten i.p.v. km): zie BUILD.md →
  *   gebruik 'min' i.p.v. 'km' in PLAN (referentie: bartlopen-sietse).
- *  Laat 'athleteWord' / "strijder" staan — dat is het vaste signatuurwoord.
+ *  Laat 'athleteWord' / "strijder" staan, dat is het vaste signatuurwoord.
  * ================================================================== */
 
-/* ========== INSTELLINGEN PER HARDLOPER — pas dit blok aan ========== */
+/* ========== INSTELLINGEN PER HARDLOPER, pas dit blok aan ========== */
 const CONFIG = {
-  unit:       "km",                       // "km" of "min" — waar het schema op stuurt (grafiek/labels)
+  unit:       "km",                       // "km" of "min", waar het schema op stuurt (grafiek/labels)
   zonePaceSuffix: "/km",                  // "/km" bij pace-zones; "" bij op-gevoel/RPE (bv. beginners)
-  footEmoji:  "🏃‍♀️",                     // 🏃‍♀️ of 🏃‍♂️ — loper-emoji in footer + agenda
-  mottos: ["Zet 'm op, strijder!", "Lekker bezig, strijder!", "Je bouwt 'm rustig op, strijder.", "Halverwege — knap volgehouden! ⚡", "Bijna race-klaar, strijder!", "Finisher! Wat een prestatie, strijder. 🏅"], // hero-slogans (0%→race→klaar)
+  footEmoji:  "🏃‍♀️",                     // 🏃‍♀️ of 🏃‍♂️, loper-emoji in footer + agenda
+  mottos: ["Zet 'm op, strijder!", "Lekker bezig, strijder!", "Je bouwt 'm rustig op, strijder.", "Halverwege, knap volgehouden! ⚡", "Bijna race-klaar, strijder!", "Finisher! Wat een prestatie, strijder. 🏅"], // hero-slogans (0%→race→klaar)
   appName:    "Op naar 21,1K",            // titel boven in de app
   runner:     "Demoloper",                // naam van de loper
   goal:       "Halve marathon in ±2:15",  // doel (groot in de hero)
   startDate:  new Date(2026, 5, 8),       // MAANDAG van week 1 (maand 0-based: 5 = juni)
-  storeKey:   "demoloper.log.v1",         // UNIEKE opslagsleutel — per loper anders!
+  storeKey:   "demoloper.log.v1",         // UNIEKE opslagsleutel, per loper anders!
   coachName:  "Coach Bart",               // naam van de coach
   coachHandle:"@bartlopen",               // TikTok/social van de coach
   coachPhoto: "coach.jpg",                // coachfoto (bestand in deze map)
-  athleteWord:"strijder",                 // vast signatuurwoord — niet wijzigen
+  athleteWord:"strijder",                 // vast signatuurwoord, niet wijzigen
   catchphrase:"Zet 'm op, strijder!",     // jouw TikTok-leus
 };
 /* =================================================================== */
@@ -60,7 +60,7 @@ const zoneByKey = Object.fromEntries(ZONES.map((z) => [z.key, z]));
 const COACH = {
   duur: [
     "Rustig tempo vandaag, strijder. Hier leg je je basis.",
-    "Geen haast — juist deze kalme kilometers maken je sterker.",
+    "Geen haast, juist deze kalme kilometers maken je sterker.",
     "Lekker ontspannen lopen. Geniet er gewoon van, strijder.",
     "Rustig is precies goed: zo blijf je fit en blessurevrij.",
     "Praten moet makkelijk kunnen. Houd 'm zacht, strijder.",
@@ -73,7 +73,7 @@ const COACH = {
     "Tijd op de benen betaalt zich later uit. Jij kunt dit, strijder.",
     "Verdeel je krachten en geniet van de afstand.",
     "Elke kilometer telt vandaag. Mooi onderweg, strijder.",
-    "Bewust rustiger dan je voelt — dat is precies goed.",
+    "Bewust rustiger dan je voelt, dat is precies goed.",
     "Geduld is je kracht vandaag, strijder. Lekker doorkabbelen.",
     "Drinken en happen oefenen mag. Rustig en constant.",
     "Dit is de basis onder je halve, strijder. Stap voor stap.",
@@ -81,10 +81,10 @@ const COACH = {
   tempo: [
     "Tempoblok, strijder: stevig, maar netjes onder controle.",
     "Zoek een gelijkmatig, vlot ritme. Hier word je sneller van.",
-    "Net buiten je comfortzone — daar zit je winst, strijder.",
+    "Net buiten je comfortzone, daar zit je winst, strijder.",
     "Beheerst doorzetten. Je tilt je niveau rustig omhoog.",
     "Korte zinnen moeten nog lukken. Mooi gedoseerd, strijder.",
-    "Niet jagen tot je verzuurt — vlot en in balans.",
+    "Niet jagen tot je verzuurt, vlot en in balans.",
     "Voel je sterker worden, strijder. Houd 'm beheerst.",
   ],
   interval: [
@@ -93,13 +93,13 @@ const COACH = {
     "Even pittig, dan rust. Jij houdt de regie, strijder.",
     "Scherp en gecontroleerd. Hier komt je snelheid vandaan.",
     "Lichte voeten, rustige adem tussendoor. Mooi, strijder.",
-    "Geen sprint najagen — vlot en ontspannen blijft het.",
+    "Geen sprint najagen, vlot en ontspannen blijft het.",
     "Elke herhaling hetzelfde. Beheerst en netjes, strijder.",
   ],
   doel: [
     "Halve-marathontempo, strijder. Onthoud hoe dit voelt.",
     "Dit is je wedstrijdritme. Vertrouw op je benen, strijder.",
-    "Beheerst op tempo blijven — precies waar je het voor doet.",
+    "Beheerst op tempo blijven, precies waar je het voor doet.",
     "Voel je HM-tempo, strijder. Je bouwt er rustig naartoe.",
     "Niet sneller dan dit. Rustig vertrouwen, strijder.",
     "Dit ritme ga je terugzien op de startlijn. Prent het in.",
@@ -131,8 +131,8 @@ const coachLine = (zone) => {
 
 /* --- Waarom deze training? (uitleg per type) ----------------------- */
 const WHY = {
-  duur:     "Rustige duurlopen bouwen je aerobe motor: sterker hart, meer haarvaten en betere vetverbranding. Het grootste deel van je trainingstijd hoort hier rustig te zijn — zo kun je vaker en blessurevrij lopen.",
-  lang:     "De lange duurloop traint je uithoudingsvermogen en de gewenning aan tijd op de benen. Je leert energie sparen en mentaal doorzetten — de basis onder een sterke halve marathon. Bewust rustiger dan je 10 km-tempo.",
+  duur:     "Rustige duurlopen bouwen je aerobe motor: sterker hart, meer haarvaten en betere vetverbranding. Het grootste deel van je trainingstijd hoort hier rustig te zijn, zo kun je vaker en blessurevrij lopen.",
+  lang:     "De lange duurloop traint je uithoudingsvermogen en de gewenning aan tijd op de benen. Je leert energie sparen en mentaal doorzetten, de basis onder een sterke halve marathon. Bewust rustiger dan je 10 km-tempo.",
   tempo:    "Tempoblokken liggen rond je omslagpunt. Je leert sneller lopen zónder te verzuren, precies wat je halve-marathontempo structureel omhoog tilt.",
   interval: "Korte, snelle herhalingen prikkelen je VO2max en loopeconomie. Je benen leren vlot schakelen, zonder lang in het rood te gaan.",
   doel:     "Lopen op je halve-marathontempo (≈ 6:24/km) maakt dat tempo vertrouwd. Op de racedag voelt het dan als thuiskomen in plaats van een gok.",
@@ -222,7 +222,7 @@ const PLAN = [
   { week: 14, dates: "7–13 sep", phase: "Fase 4 · Piek, taper & race", sessions: [
     ma({ zone: "duur", km: 9,  title: "9 km rustig",      goal: "Volume", blocks: ["9 km in Z2"] }),
     don({ zone: "interval", km: 10, title: "5×1 km interval", goal: "Laatste snelheid", blocks: ["1,5 km inlopen", "5×1 km @ 6:00–6:10/km", "90 sec rust ertussen", "1 km uitlopen"] }),
-    za({ zone: "lang", km: 20, title: "20 km rustig",     goal: "Piekduurloop — niet racen!", blocks: ["20 km op 6:55–7:30/km", "Bewust rustig, dit is geen wedstrijd"] }),
+    za({ zone: "lang", km: 20, title: "20 km rustig",     goal: "Piekduurloop, niet racen!", blocks: ["20 km op 6:55–7:30/km", "Bewust rustig, dit is geen wedstrijd"] }),
   ]},
   { week: 15, dates: "14–20 sep", phase: "Fase 4 · Piek, taper & race", taper: true, sessions: [
     ma({ zone: "duur", km: 7,  title: "7 km rustig",   goal: "Taper start", blocks: ["7 km op 6:45–7:15/km"] }),
@@ -257,7 +257,7 @@ const INFO = [
   ]},
   { icon: "🎯", title: "Taper & raceweek", items: [
     "Week 15–16: omvang flink omlaag, intensiteit kort scherp houden.",
-    "Je moet je bijna té fris voelen — dat is de bedoeling.",
+    "Je moet je bijna té fris voelen, dat is de bedoeling.",
     "Richttijd 2:15 ≈ 6:24/km, maar uitlopen is het hoofddoel.",
     "Start eerste 5 km rustig (6:35–6:45), daarna richting 6:25–6:35, laatste 5 km op gevoel.",
   ]},
@@ -418,7 +418,7 @@ function renderHero(stats) {
   fg.style.strokeDasharray = c;
   fg.style.strokeDashoffset = c;
   requestAnimationFrame(() => { fg.style.strokeDashoffset = c * (1 - pct / 100); });
-  const mottos = CONFIG.mottos || ["Zet 'm op, strijder!", "Lekker bezig, strijder!", "Je bouwt 'm rustig op, strijder.", "Halverwege — knap volgehouden! ⚡", "Bijna race-klaar, strijder!", "Finisher! Wat een prestatie, strijder. 🏅"];
+  const mottos = CONFIG.mottos || ["Zet 'm op, strijder!", "Lekker bezig, strijder!", "Je bouwt 'm rustig op, strijder.", "Halverwege, knap volgehouden! ⚡", "Bijna race-klaar, strijder!", "Finisher! Wat een prestatie, strijder. 🏅"];
   $("heroMotto").textContent =
     stats.raceDone ? mottos[5] : pct >= 80 ? mottos[4] : pct >= 50 ? mottos[3] : pct >= 20 ? mottos[2] : pct > 0 ? mottos[1] : mottos[0];
   renderCountdown();
@@ -445,12 +445,12 @@ function renderCountdown() {
   const { days, name } = raceInfo();
   const wks = Math.round(days / 7), mon = Math.round(days / 30);
   el.textContent =
-    days > 180 ? `🗓️ jouw grote doel: over ~${mon} maanden — ${name}` :
+    days > 180 ? `🗓️ jouw grote doel: over ~${mon} maanden · ${name}` :
     days > 14 ? `🗓️ nog ${wks} weken tot je ${name}` :
     days > 1 ? `🗓️ nog ${days} dagen tot je ${name}` :
     days === 1 ? `🗓️ morgen is het zover: ${name}!` :
     days === 0 ? `🔥 vandaag is het zover: ${name}!` :
-    `🎉 ${name} volbracht — chapeau!`;
+    `🎉 ${name} volbracht, chapeau!`;
 }
 
 function renderStats(stats) {
@@ -470,7 +470,7 @@ function renderNextUp() {
     flatSessions.find((s) => !log[sid(s.week, s.day)]?.done);
   const box = $("nextUp");
   if (!next) {
-    box.innerHTML = `<div class="nextup-card done"><span class="nextup-eyebrow">🏅 Schema compleet</span><strong>Alles afgevinkt — chapeau, ${RUNNER}!</strong></div>`;
+    box.innerHTML = `<div class="nextup-card done"><span class="nextup-eyebrow">🏅 Schema compleet</span><strong>Alles afgevinkt, chapeau, ${RUNNER}!</strong></div>`;
     return;
   }
   const z = zoneByKey[next.zone];
@@ -693,10 +693,10 @@ function renderRecords(stats) {
   }
   const pace = fmtPace(stats.bestPace);
   const longest = UNIT === "min"
-    ? (stats.maxTime ? `${Math.round(stats.maxTime / 60)} min` : "—")
-    : (stats.maxDist ? `${stats.maxDist} km` : "—");
+    ? (stats.maxTime ? `${Math.round(stats.maxTime / 60)} min` : "–")
+    : (stats.maxDist ? `${stats.maxDist} km` : "–");
   const rows = [
-    ["⚡ Snelste tempo", pace || "—"],
+    ["⚡ Snelste tempo", pace || "–"],
     [UNIT === "min" ? "⏱️ Langste loop" : "🏔️ Verste loop", longest],
     ["📊 Totaal gelopen", `${Math.round(stats.km * 10) / 10} km`],
     ["🔥 Langste reeks", String(stats.streak)],
@@ -847,7 +847,7 @@ function openDetail(week, day) {
           </span>
         </label>
         <label class="full">Gemiddeld tempo
-          <output id="fPace" class="pace-out">${fmtPace(paceSeconds(e.distance, e.time)) || "—"}</output>
+          <output id="fPace" class="pace-out">${fmtPace(paceSeconds(e.distance, e.time)) || "–"}</output>
         </label>
         <label>Hartslag (bpm)
           <input id="fHr" type="number" inputmode="numeric" placeholder="bv. 152" value="${escapeHtml(e.hr ?? "")}">
@@ -873,7 +873,7 @@ function openDetail(week, day) {
     if (!$("fTimeMinutes").value && !$("fTimeSeconds").value) return "";
     return durationValue($("fTimeMinutes").value, $("fTimeSeconds").value);
   };
-  const recalc = () => ($("fPace").textContent = fmtPace(paceSeconds($("fDistance").value, readTime())) || "—");
+  const recalc = () => ($("fPace").textContent = fmtPace(paceSeconds($("fDistance").value, readTime())) || "–");
   $("fDistance").addEventListener("input", recalc);
   $("fTimeMinutes").addEventListener("input", recalc);
   $("fTimeSeconds").addEventListener("input", () => {
@@ -901,7 +901,7 @@ function openDetail(week, day) {
     log[id] = cur; saveLog();
     if (cur.done) {
       celebrate();
-      toast(w.finish ? "🌞 Zomer rond! Wat een strijder!" : w.race ? "🏅 Finisher! Wat een prestatie, strijder!" : w.tuneup ? "🏁 Wedstrijd voltooid — sterk gepacet!" : DONE[Math.floor(Math.random() * DONE.length)]);
+      toast(w.finish ? "🌞 Zomer rond! Wat een strijder!" : w.race ? "🏅 Finisher! Wat een prestatie, strijder!" : w.tuneup ? "🏁 Wedstrijd voltooid, sterk gepacet!" : DONE[Math.floor(Math.random() * DONE.length)]);
     }
     closeDetail();
   });
@@ -987,7 +987,7 @@ function celebrate() {
  *  Init
  * ================================================================== */
 /* Branding uit CONFIG zetten (zodat templaten makkelijk is) */
-document.title = `${CONFIG.appName} — ${CONFIG.coachHandle}`;
+document.title = `${CONFIG.appName} · ${CONFIG.coachHandle}`;
 if ($("appName")) $("appName").textContent = CONFIG.appName;
 if ($("brandHandle")) $("brandHandle").textContent = CONFIG.coachHandle;
 if ($("footCredit")) {
@@ -1135,7 +1135,7 @@ $("importFile").addEventListener("change", (e) => {
       if (!incoming || typeof incoming !== "object") throw new Error("ongeldig");
       log = { ...log, ...incoming };
       saveLog(); renderAll();
-      toast("Back-up geladen ⬆︎ — welkom terug!");
+      toast("Back-up geladen ⬆︎, welkom terug!");
     } catch {
       toast("Kon dit bestand niet lezen");
     }
