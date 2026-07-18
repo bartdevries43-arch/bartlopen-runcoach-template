@@ -155,7 +155,7 @@ const PLAN = [
   ]},
   { week: 2, dates: "15–21 jun", phase: "Fase 1 · Ritme & belastbaarheid", sessions: [
     ma({ zone: "duur",  km: 6, title: "6 km rustig",    goal: "Herstel & volume", blocks: ["6 km in Z2, makkelijk kunnen praten"] }),
-    don({ zone: "tempo", km: 7, title: "3×1 km tempo",  goal: "Controle op tempo", blocks: ["1,5 km inlopen + 3 versnellingen", "3×1 km @ 6:20–6:30/km", "2 min rustig ertussen", "1 km uitlopen"] }),
+    don({ zone: "tempo", km: 7, title: "3×1 km tempo",  goal: "Controle op tempo", blocks: ["1,5 km inlopen + 3 versnellingen", "3×1 km @ 6:20–6:30/km", "2×2 min rustig tussen de blokken", "1 km uitlopen"] }),
     za({ zone: "doel", km: 10, title: "🏁 10 km Kuip Run · Rotterdam", goal: "Tune-up wedstrijd in De Kuip", kind: "Wedstrijd", tuneup: true, blocks: ["10 km wedstrijd in Rotterdam", "Gecontroleerd lopen, genieten van de sfeer", "Telt als je lange duurloop deze week"] }),
   ]},
   { week: 3, dates: "22–28 jun", phase: "Fase 1 · Ritme & belastbaarheid", sessions: [
@@ -172,7 +172,7 @@ const PLAN = [
   /* ---- Fase 2 · Duur opbouwen & eerste tempoblokken ---- */
   { week: 5, dates: "6–12 jul", phase: "Fase 2 · Duur opbouwen", sessions: [
     ma({ zone: "duur", km: 7,  title: "7 km rustig",   goal: "Volume", blocks: ["7 km op 6:45–7:15/km"] }),
-    don({ zone: "doel", km: 8, title: "4×1 km tempo",  goal: "HM-gevoel opdoen", blocks: ["1,5 km inlopen", "4×1 km @ 6:15–6:25/km", "2 min rustig ertussen", "1 km uitlopen"] }),
+    don({ zone: "doel", km: 8, title: "4×1 km tempo",  goal: "HM-gevoel opdoen", blocks: ["1,5 km inlopen", "4×1 km @ 6:15–6:25/km", "3×2 min rustig tussen de blokken", "1 km uitlopen"] }),
     za({ zone: "lang", km: 12, title: "12 km rustig",  goal: "Duur vasthouden", blocks: ["12 km op 6:55–7:25/km"] }),
   ]},
   { week: 6, dates: "13–19 jul", phase: "Fase 2 · Duur opbouwen", sessions: [
@@ -194,7 +194,7 @@ const PLAN = [
   /* ---- Fase 3 · Halve-marathonritme ---- */
   { week: 9, dates: "3–9 aug", phase: "Fase 3 · Halve-marathonritme", sessions: [
     ma({ zone: "duur", km: 8,  title: "8 km rustig",   goal: "Volume", blocks: ["8 km in Z2"] }),
-    don({ zone: "tempo", km: 9, title: "3×2 km tempo", goal: "Drempelgevoel", blocks: ["1,5 km inlopen", "3×2 km @ 6:15–6:25/km", "3 min rustig ertussen", "1 km uitlopen"] }),
+    don({ zone: "tempo", km: 9, title: "3×2 km tempo", goal: "Drempelgevoel", blocks: ["1,5 km inlopen", "3×2 km @ 6:15–6:25/km", "2×3 min rustig tussen de blokken", "1 km uitlopen"] }),
     za({ zone: "lang", km: 15, title: "15 km rustig",  goal: "Duur vasthouden", blocks: ["15 km op 6:55–7:30/km"] }),
   ]},
   { week: 10, dates: "10–16 aug", phase: "Fase 3 · Halve-marathonritme", sessions: [
@@ -204,7 +204,7 @@ const PLAN = [
   ]},
   { week: 11, dates: "17–23 aug", phase: "Fase 3 · Halve-marathonritme", sessions: [
     ma({ zone: "duur", km: 9,  title: "9 km rustig",      goal: "Volume", blocks: ["9 km in Z2"] }),
-    don({ zone: "doel", km: 9, title: "2×3 km op HM-tempo", goal: "HM-ritme", blocks: ["1,5 km inlopen", "2×3 km @ 6:20–6:30/km", "3 min rustig ertussen", "1 km uitlopen"] }),
+    don({ zone: "doel", km: 9, title: "2×3 km op HM-tempo", goal: "HM-ritme", blocks: ["1,5 km inlopen", "2×3 km @ 6:20–6:30/km", "3 min rustig tussen de twee blokken", "1 km uitlopen"] }),
     za({ zone: "lang", km: 18, title: "18 km rustig",     goal: "Piek-duur nadert", blocks: ["18 km op 6:55–7:35/km"] }),
   ]},
   { week: 12, dates: "24–30 aug", phase: "Fase 3 · Halve-marathonritme", recovery: true, sessions: [
@@ -216,7 +216,7 @@ const PLAN = [
   /* ---- Fase 4 · Piek, taper & raceweek ---- */
   { week: 13, dates: "31 aug–6 sep", phase: "Fase 4 · Piek, taper & race", sessions: [
     ma({ zone: "duur", km: 9,  title: "9 km rustig",   goal: "Volume", blocks: ["9 km op 6:45–7:15/km"] }),
-    don({ zone: "tempo", km: 10, title: "3×2 km tempo", goal: "Tempoblokken", blocks: ["1,5 km inlopen", "3×2 km @ 6:10–6:20/km", "3 min rustig ertussen", "1 km uitlopen"] }),
+    don({ zone: "tempo", km: 10, title: "3×2 km tempo", goal: "Tempoblokken", blocks: ["1,5 km inlopen", "3×2 km @ 6:10–6:20/km", "2×3 min rustig tussen de blokken", "1 km uitlopen"] }),
     za({ zone: "lang", km: 18, title: "18 km rustig",  goal: "Lange duur", blocks: ["18 km op 6:55–7:30/km", "Laatste 3 km max 6:35/km als je fris bent"] }),
   ]},
   { week: 14, dates: "7–13 sep", phase: "Fase 4 · Piek, taper & race", sessions: [
