@@ -153,7 +153,7 @@ const PLAN = [
     don({ zone: "duur", km: 6, title: "6 km + 4×100 m",    goal: "Techniek & soepelheid", kind: "Soepel", blocks: ["6 km rustig", "4×100 m soepel versnellen", "Versnellingen ontspannen, niet sprinten"] }),
     za({ zone: "lang", km: 10, title: "10 km rustig",      goal: "Vertrouwde duur", blocks: ["10 km op 6:55–7:20/km", "Constant en ontspannen lopen"] }),
   ]},
-  { week: 2, dates: "15–21 jun", phase: "Fase 1 · Ritme & belastbaarheid", sessions: [
+  { week: 2, dates: "15–21 jun", phase: "Fase 1 · Ritme & belastbaarheid", tuneup: true, tuneupTag: "Kuip Run", raceLabel: "🏁 Kuip Run", sessions: [
     ma({ zone: "duur",  km: 6, title: "6 km rustig",    goal: "Herstel & volume", blocks: ["6 km in Z2, makkelijk kunnen praten"] }),
     don({ zone: "tempo", km: 7, title: "3×1 km tempo",  goal: "Controle op tempo", blocks: ["1,5 km inlopen + 3 versnellingen", "3×1 km @ 6:20–6:30/km", "2×2 min rustig tussen de blokken", "1 km uitlopen"] }),
     za({ zone: "doel", km: 10, title: "🏁 10 km Kuip Run · Rotterdam", goal: "Tune-up wedstrijd in De Kuip", kind: "Wedstrijd", tuneup: true, blocks: ["10 km wedstrijd in Rotterdam", "Gecontroleerd lopen, genieten van de sfeer", "Telt als je lange duurloop deze week"] }),
@@ -570,7 +570,7 @@ function renderChart() {
 function tagOf(w) {
   if (w.finish) return `<span class="week-tag tag-race">Finale</span>`;
   if (w.race) return `<span class="week-tag tag-race">Raceweek</span>`;
-  if (w.tuneup) return `<span class="week-tag tag-tuneup">10 km race</span>`;
+  if (w.tuneup) return `<span class="week-tag tag-tuneup">${w.tuneupTag || "Wedstrijd"}</span>`;
   if (w.recovery) return `<span class="week-tag tag-rest">Herstel</span>`;
   if (w.taper) return `<span class="week-tag tag-taper">Taper</span>`;
   return "";
