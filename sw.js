@@ -1,10 +1,10 @@
 /* Eenvoudige offline-cache voor Run Coach. Verhoog CACHE bij elke update. */
-const CACHE = "bartlopen-runcoach-template-interval-uitleg-1-p2-u2-m2-bugfix";
+const CACHE = "bartlopen-runcoach-template-interval-uitleg-1-p2-u2-m2-bugfix-schuifmelding";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=5-c2-c3-p2-u2-m2-bugfix",
-  "./app.js?v=5-c2-c3-p2-u2-m2-bugfix",
+  "./styles.css?v=5-c2-c3-p2-u2-m2-bugfix-schuifmelding",
+  "./app.js?v=5-c2-c3-p2-u2-m2-bugfix-schuifmelding",
   "./coach.jpg",
   "./coach-logo.png",
   "./bartlopen-runcoach.png",
