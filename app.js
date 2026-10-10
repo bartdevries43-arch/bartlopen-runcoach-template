@@ -44,7 +44,7 @@ const ZONE_SUFFIX = CONFIG.zonePaceSuffix ?? "/km";
 const TOTAL_WEEKS = 16;
 const COACH_INITIAL = (CONFIG.coachName.replace(/^coach\s+/i, "")[0] || "C").toUpperCase();
 
-/* --- Tempozones (afgestemd op Marinke) ----------------------------- */
+/* --- Tempozones (voorbeeld voor de demoloper) --------------------- */
 /* NB: de zonesleutel "doel" wordt hergebruikt voor het halve-marathontempo,
    zodat alle bestaande kleuren in styles.css blijven werken.            */
 const ZONES = [
